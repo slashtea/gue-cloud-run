@@ -1,8 +1,8 @@
 FROM python:3.11.4-slim as base
 
-RUN python3 -m pip install -r requirements.txt
-
 COPY . .
+
+RUN python3 -m pip install -r requirements.txt
 
 EXPOSE 8000
 
