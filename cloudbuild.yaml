@@ -19,7 +19,7 @@
     - 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/guehelloworld2:$COMMIT_SHA'
     - '--region'
     - 'europe-west9'
-    - 'allow-unauthenticated'
+    - '--allow-unauthenticated'
   images:
     - 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/guehelloworld2:$COMMIT_SHA'
 
