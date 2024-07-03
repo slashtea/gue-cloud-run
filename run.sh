@@ -1,1 +1,1 @@
-gcloud run deploy testscript --region europe-west9 --allow-unauthenticated
+gcloud run deploy guehelloworld2 --region europe-west9 --allow-unauthenticated
