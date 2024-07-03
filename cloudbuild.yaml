@@ -19,6 +19,6 @@
     - 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/guehelloworld2:$COMMIT_SHA'
     - '--region'
     - 'europe-west9'
-      #images:
-      #- 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/testscript:$COMMIT_SHA'
+  images:
+    - 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/guehelloworld2:$COMMIT_SHA'
 
