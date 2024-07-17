@@ -1,7 +1,10 @@
 from flask import Flask, render_template
+import json
+import requests
 
 
 app = Flask(__name__, template_folder="templates")
+
 
 @app.route("/")
 def hello():
@@ -11,8 +14,15 @@ def hello():
 @app.route("/color")
 def styled_name():
     color = "green"
-    return render_template('my_page.html', content=color)
+    return render_template("my_page.html", content=color)
 
+
+@app.route("/dummy")
+def get_dummy_products():
+    r = requests.get("https://dummyjson.com/products")
+    products = json.loads(r.content).get("products")
+    print(products)
+    return render_template("dummy_page.html", content=products)
 
 
 if __name__ == "__main__":

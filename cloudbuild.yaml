@@ -2,11 +2,11 @@
   
     # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/guehelloworld2:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/gue-app-build:$COMMIT_SHA', '.']
 
-  # Push the container image to Container Registry
+  # Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/guehelloworld2:$COMMIT_SHA']
+    args: ['push', 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/gue-app-build:$COMMIT_SHA']
   
     # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -14,9 +14,9 @@
     args:
     - 'run'
     - 'deploy'
-    - 'guehelloworld2'
+    - 'gue-app-build'
     - '--image'
-    - 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/guehelloworld2:$COMMIT_SHA'
+    - 'europe-west9-docker.pkg.dev/turnkey-world-334318/cloud-run-source-deploy/gue-app-build:$COMMIT_SHA'
     - '--region'
     - 'europe-west9'
     - '--allow-unauthenticated'
