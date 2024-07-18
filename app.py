@@ -13,7 +13,7 @@ def hello():
 
 @app.route("/color")
 def styled_name():
-    color = "green"
+    color = "blue"
     return render_template("my_page.html", content=color)
 
 
@@ -27,3 +27,4 @@ def get_dummy_products():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8080)
+
