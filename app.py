@@ -13,7 +13,7 @@ def hello():
 
 @app.route("/color")
 def styled_name():
-    color = "blue"
+    color = "red"
     return render_template("my_page.html", content=color)
 
 
